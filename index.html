@@ -54,7 +54,7 @@
 
     .dark {
 
-      color: #000;
+      background-color: #000;
         /** IMPLEMENT DARK MODE **/
     }
 
@@ -88,6 +88,11 @@
         body.classList.add("dark");
     }
 
+    function makeNormal() {
+        var body = document.getElementById("body");
+        body.classList.remove("dark");
+    }
+
     const sensor = new AmbientLightSensor();
 
 sensor.onreading = () => {
@@ -99,6 +104,9 @@ sensor.onreading = () => {
 
    makeDark();
 
+ }
+ else {
+   makeNormal();
  }
 
 };
