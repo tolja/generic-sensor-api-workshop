@@ -9,6 +9,30 @@
 
     <script>
 
+    const sensor1 = new Accelerometer();
+    const sensor2 = new Gyroscope();
+
+    sensor1.start();
+    sensor2.start();
+
+    sensor1.onreading = () => {
+
+    console.log("X-Achse Accelero: " + sensor.x);
+    console.log("Y-Achse Accelero:" + sensor.y);
+    console.log("Z-Achse Accelero:" + sensor.z);
+    }
+
+    sensor1.onerror = event => console.log(event.error);
+
+    sensor2.onreading = () => {
+    console.log("X-Achse Gyro: " + sensor.x);
+    console.log("Y-Achse Gyro: " + sensor.y);
+    console.log("Z-Achse Gyro: " + sensor.z);
+    };
+
+    sensor2.onerror = event => console.log(event.error);
+
+
     </script>
   </body>
 </html>
