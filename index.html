@@ -53,6 +53,8 @@
     }
 
     .dark {
+
+      color: #000;
         /** IMPLEMENT DARK MODE **/
     }
 
@@ -80,7 +82,34 @@
     </p>
 
     <script>
-      // TODO IMPLEMENT DARK MODE
+
+    function makeDark() {
+        var body = document.getElementById("body");
+        element.classList.add("dark");
+    }
+
+    const sensor = new AmbientLightSensor();
+
+sensor.onreading = () => {
+ console.log('Aktueller Lux-Wert:', sensor.illuminance);
+
+ document.getElementById("console").innerHTML = sensor.illuminance;
+
+ if(sensor.illuminance <= 30) {
+
+   makeDark();
+
+ }
+
+};
+
+sensor.onerror = (event) => {
+ console.log(event.error.message);
+};
+
+sensor.start();
+
+
     </script>
   </body>
 </html>
