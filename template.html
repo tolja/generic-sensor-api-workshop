@@ -12,17 +12,17 @@
     const sensor1 = new Accelerometer();
     const sensor2 = new Gyroscope();
 
-    sensor1.start();
+    // sensor1.start();
     sensor2.start();
 
-    sensor1.onreading = () => {
-
-    console.log("X-Achse Accelero: " + sensor1.x);
-    console.log("Y-Achse Accelero:" + sensor1.y);
-    console.log("Z-Achse Accelero:" + sensor1.z);
-    }
-
-    sensor1.onerror = event => console.log(event.error);
+    // sensor1.onreading = () => {
+    //
+    // console.log("X-Achse Accelero: " + sensor1.x);
+    // console.log("Y-Achse Accelero:" + sensor1.y);
+    // console.log("Z-Achse Accelero:" + sensor1.z);
+    // }
+    //
+    // sensor1.onerror = event => console.log(event.error);
 
     sensor2.onreading = () => {
     console.log("X-Achse Gyro: " + sensor2.x);
