@@ -13,7 +13,6 @@
     const sensor2 = new Gyroscope();
 
     sensor1.start();
-    sensor2.start();
 
     sensor1.onreading = () => {
 
@@ -24,6 +23,8 @@
 
     sensor1.onerror = event => console.log(event.error);
 
+    sensor2.start();
+    
     sensor2.onreading = () => {
     console.log("X-Achse Gyro: " + sensor2.x);
     console.log("Y-Achse Gyro: " + sensor2.y);
